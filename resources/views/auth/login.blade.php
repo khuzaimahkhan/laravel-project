@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <!-- Password Toggle Script -->
+    <!-- Password Toggle Script /-->
     <script>
         const togglePassword = document.querySelector("#togglePassword");
         const passwordInput = document.querySelector("#password");

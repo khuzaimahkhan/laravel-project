@@ -24,13 +24,19 @@
                     <a class="nav-link fw-semibold text-neon" href="{{ route('products') }}">Products</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold position-relative text-neon" href="{{ route('cart') }}">
+                    <a class="nav-link fw-semibold position-relative text-neon" href="{{ route('cart.index') }}">
                         Cart
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            2
-                        </span>
+                        @php
+                            $cartCount = session('cart') ? count(session('cart')) : 0;
+                        @endphp
+                        @if($cartCount > 0)
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ $cartCount }}
+            </span>
+                        @endif
                     </a>
                 </li>
+
                 <li class="nav-item mx-2">
                     <a class="nav-link fw-semibold text-neon" href="{{ route('checkout') }}">Checkout</a>
                 </li>
